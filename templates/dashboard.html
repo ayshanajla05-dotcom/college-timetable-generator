@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+<h1 class="text-white mb-4">
+
+Dashboard
+
+</h1>
+
+<div class="row">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card">
+
+<h5>🏢 Departments</h5>
+
+<h2>{{ department_count }}</h2>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card">
+
+<h5>👨‍🏫 Faculty</h5>
+
+<h2>{{ faculty_count }}</h2>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card">
+
+<h5>📚 Subjects</h5>
+
+<h2>{{ subject_count }}</h2>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card">
+
+<h5>🏫 Rooms</h5>
+
+<h2>{{ room_count }}</h2>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="dashboard-card">
+
+<h5>👥 Class</h5>
+
+<h2>{{ section_count }}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="mt-4">
+
+<a href="{{ url_for('generate') }}" class="btn btn-modern">
+🗓 Generate Timetable
+</a>
+
+<a href="{{ url_for('timetable') }}" class="btn btn-modern">
+📋 View Timetable
+</a>
+
+</div>
+
+</div>
+{% endblock %}

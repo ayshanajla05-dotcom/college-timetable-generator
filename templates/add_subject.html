@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2>Add Subject</h2>
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label>Subject Code</label>
+
+<input
+class="form-control"
+name="subject_code"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Subject Name</label>
+
+<input
+class="form-control"
+name="subject_name"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Semester</label>
+
+<input
+type="number"
+class="form-control"
+name="semester"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Hours Per Week</label>
+
+<input
+type="number"
+class="form-control"
+name="hours_per_week"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Type</label>
+
+<select
+class="form-select"
+name="subject_type">
+
+<option>Theory</option>
+
+<option>Lab</option>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label>Department</label>
+
+<select
+class="form-select"
+name="department_id">
+
+{% for department in departments %}
+
+<option value="{{ department.id }}">
+
+{{ department.name }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label>Faculty</label>
+
+<select
+class="form-select"
+name="faculty_id">
+
+{% for faculty in faculties %}
+
+<option value="{{ faculty.id }}">
+
+{{ faculty.faculty_name }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<button class="btn btn-success">
+
+Save
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2>Faculty Management</h2>
+
+<form method="GET" class="row mb-3">
+
+<div class="col-md-6">
+<input class="form-control"
+name="search"
+placeholder="Search Faculty">
+</div>
+
+<div class="col-md-2">
+<button class="btn btn-primary">Search</button>
+</div>
+
+<div class="col-md-4 text-end">
+<a href="{{ url_for('add_faculty') }}"
+class="btn btn-success">
+Add Faculty
+</a>
+</div>
+
+</form>
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Hours</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for faculty in faculties %}
+
+<tr>
+
+<td>{{ faculty.id }}</td>
+
+<td>{{ faculty.faculty_name }}</td>
+
+<td>{{ faculty.department.name }}</td>
+
+<td>{{ faculty.email }}</td>
+
+<td>{{ faculty.phone }}</td>
+
+<td>{{ faculty.max_hours }}</td>
+
+<td>
+
+<a
+class="btn btn-warning btn-sm"
+href="{{ url_for('edit_faculty',id=faculty.id) }}">
+Edit
+</a>
+
+<a
+class="btn btn-danger btn-sm"
+onclick="return confirm('Delete Faculty?')"
+href="{{ url_for('delete_faculty',id=faculty.id) }}">
+Delete
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+{% endblock %}

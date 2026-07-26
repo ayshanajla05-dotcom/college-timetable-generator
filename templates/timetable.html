@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2 class="text-center mb-4">
+College Timetable
+</h2>
+
+{% for section, table in timetable.items() %}
+
+<h4 class="mt-5">
+Section : {{ section }}
+</h4>
+
+<table class="table table-bordered text-center">
+
+<thead class="table-dark">
+
+<tr>
+
+<th>Day Order</th>
+
+{% for p in periods %}
+<th>P{{ p }}</th>
+{% endfor %}
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for day in days %}
+
+<tr>
+
+<td><b>{{ day }}</b></td>
+
+{% for p in periods %}
+
+<td>
+
+{% if table[day][p] %}
+
+<b>{{ table[day][p]["subject"] }}</b>
+
+<br>
+
+<small>
+
+{{ table[day][p]["faculty"] }}
+
+</small>
+
+<br>
+
+{{ table[day][p]["room"] }}
+
+{% endif %}
+
+</td>
+
+{% endfor %}
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+{% endfor %}
+
+<div class="mt-4">
+
+<a
+class="btn btn-success"
+href="{{ url_for('export_excel') }}">
+
+Export Excel
+
+</a>
+
+<a
+class="btn btn-danger"
+href="{{ url_for('pdf') }}">
+
+Export PDF
+
+</a>
+
+<button
+onclick="window.print()"
+class="btn btn-primary">
+
+Print
+
+</button>
+
+</div>
+
+</div>
+
+{% endblock %}

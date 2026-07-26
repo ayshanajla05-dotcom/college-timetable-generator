@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2>Sections</h2>
+
+<a
+class="btn btn-success mb-3"
+href="{{ url_for('add_section') }}">
+
+Add Section
+
+</a>
+
+<table class="table table-bordered">
+
+<tr>
+
+<th>Name</th>
+
+<th>Department</th>
+
+<th>Semester</th>
+
+<th>Strength</th>
+
+</tr>
+
+{% for section in sections %}
+
+<tr>
+
+<td>{{ section.section_name }}</td>
+
+<td>{{ section.department.name }}</td>
+
+<td>{{ section.semester }}</td>
+
+<td>{{ section.strength }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

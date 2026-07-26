@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2>Add Section</h2>
+
+<form method="POST">
+
+<input
+class="form-control mb-3"
+name="section_name"
+placeholder="Section">
+
+<select
+class="form-select mb-3"
+name="department_id"
+placeholder="department">
+
+{% for department in departments %}
+
+<option value="{{ department.id }}">
+
+{{ department.name }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+<input
+class="form-control mb-3"
+type="number"
+name="semester"
+placeholder="Semester">
+
+<input
+class="form-control mb-3"
+type="number"
+name="strength"
+placeholder="Student Strength">
+
+<button class="btn btn-success">
+
+Save
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

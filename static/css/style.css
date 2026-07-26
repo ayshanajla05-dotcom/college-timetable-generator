@@ -1,0 +1,222 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+
+    min-height:100vh;
+
+}
+
+/* Layout */
+
+.wrapper{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    width:260px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border-right:1px solid rgba(255,255,255,.2);
+
+    padding:30px;
+
+}
+
+.logo{
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.sidebar a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px;
+
+    margin-bottom:10px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:rgba(255,255,255,.25);
+
+    padding-left:20px;
+
+}
+
+/* Main */
+
+.main{
+
+    flex:1;
+
+    padding:40px;
+
+}
+
+/* Glass Cards */
+
+.dashboard-card{
+
+    background:rgba(255,255,255,.20);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.30);
+
+    box-shadow:0 8px 32px rgba(0,0,0,.20);
+
+    transition:.4s;
+
+    margin-bottom:25px;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.30);
+
+}
+
+.dashboard-card h2{
+
+    font-size:40px;
+
+}
+
+.dashboard-card h5{
+
+    font-size:22px;
+
+}
+
+/* Buttons */
+
+.btn-modern{
+
+    border:none;
+
+    border-radius:15px;
+
+    padding:12px 30px;
+
+    color:white;
+
+    font-weight:600;
+
+    background:#2563eb;
+
+}
+
+.btn-modern:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:90px;
+
+}
+
+.sidebar .logo{
+
+    font-size:20px;
+
+}
+
+.sidebar a{
+
+    text-align:center;
+
+    font-size:0;
+
+}
+
+.sidebar a i{
+
+    font-size:24px;
+
+}
+
+.main{
+
+    padding:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.wrapper{
+
+    flex-direction:column;
+
+}
+
+.sidebar{
+
+    width:100%;
+
+    display:flex;
+
+    overflow-x:auto;
+
+    padding:10px;
+
+}
+
+.sidebar a{
+
+    margin:5px;
+
+    white-space:nowrap;
+
+}
+
+}

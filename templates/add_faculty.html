@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2>Add Faculty</h2>
+
+<form method="POST">
+
+<div class="mb-3">
+<label>Name</label>
+<input
+class="form-control"
+name="faculty_name"
+required>
+</div>
+
+<div class="mb-3">
+<label>Department</label>
+
+<select
+class="form-select"
+name="department_id">
+
+{% for department in departments %}
+
+<option value="{{ department.id }}">
+{{ department.name }}
+</option>
+
+{% endfor %}
+
+</select>
+
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input
+class="form-control"
+type="email"
+name="email">
+</div>
+
+<div class="mb-3">
+<label>Phone</label>
+<input
+class="form-control"
+name="phone">
+</div>
+
+<div class="mb-3">
+<label>Maximum Hours</label>
+<input
+class="form-control"
+type="number"
+name="max_hours">
+</div>
+
+<button class="btn btn-success">
+Save
+</button>
+
+<a
+href="{{ url_for('faculty') }}"
+class="btn btn-secondary">
+Cancel
+</a>
+
+</form>
+
+</div>
+
+{% endblock %}
